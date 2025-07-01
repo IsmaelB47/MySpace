@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Web Page</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <!-- Left: Dropdown Menu -->
+    <div class="dropdown">
+      <button class="dropbtn">Menu</button>
+      <div class="dropdown-content" id="menuDropdown">
+        <a href="events.html"target="_blank">Events</a>
+        <a href="faq.html"target="_blank">FAQ</a>
+        <a href="contact.html"target="_blank">Contact Us</a>
+      </div>
+    </div>
+
+    <!-- Center: Logo -->
+    <div class="logo">
+      <img src="logo.png" alt="Logo" />
+    </div>
+
+    <!-- Right: Search -->
+    <div class="search-box">
+      <input type="text" placeholder="Search..." />
+      <button onclick="search()"><img src="images/find.png"width="20"></button> 
+    </div>
+  </header>
+
+  <main class="main-content">
+    <h1>Welcome to Fort Wayne Events Area</h1>
+    <p><strong>We are here to make it easy looking for an event makes you happy</strong></p>
+  </main>
+
+  <script>
+    // Toggle dropdown visibility
+    document.querySelector('.dropbtn').addEventListener('click', function () {
+      document.getElementById('menuDropdown').classList.toggle('show');
+    });
+
+    // Close dropdown when clicking outside
+    window.addEventListener('click', function (e) {
+      if (!e.target.matches('.dropbtn')) {
+        const dropdown = document.getElementById('menuDropdown');
+        if (dropdown.classList.contains('show')) {
+          dropdown.classList.remove('show');
+        }
+      }
+    });
+
+    function search() {
+      const value = document.querySelector('.search-box input').value;
+      alert("You searched for: " + value);
+    }
+  </script>
+  <section class="event-slider">
+  <h2>Latest Events</h2>
+  <div class="slider">
+    <div class="slide">
+      <img src="images/event1.jpg" alt="Event 1" />
+      <div class="slide-text">
+        <h3>Music Night</h3>
+        <p>Experience the magic of live performances...</p>
+        <a href="events.html" target="_blank">Read More →</a>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="images/event2.jpg" alt="Event 2" />
+      <div class="slide-text">
+        <h3>Culture Fest</h3>
+        <p>Discover vibrant traditions from around the world...</p>
+        <a href="events.html" target="_blank">Read More →</a>
+      </div>
+    </div>
+<div class="slide">
+      <img src="images/event3.jpg" alt="Event 2" />
+      <div class="slide-text">
+        <h3>Sumemr Promo</h3>
+        <p>Buy your ticket now only for ...</p>
+        <a href="events.html" target="_blank">Read More →</a>
+      </div>
+    </div>
+    <!-- Add more slides here -->
+  </div>
+</section>
+<script>
+  let index = 0;
+  const slides = document.querySelectorAll('.slide');
+  setInterval(() => {
+    slides.forEach((slide, i) => {
+      slide.style.transform = `translateX(${(i - index) * 320}px)`;
+    });
+    index = (index + 1) % slides.length;
+  }, 4000);
+</script>
+<footer class="site-footer">
+  <div class="footer-top">
+    <!-- Left: Logo -->
+    <div class="footer-left">
+      <img src="logo.png" alt="FW SC Events Logo" />
+    </div>
+
+    <!-- Center: Friend Links -->
+    <div class="footer-center">
+      <a href="https://friend1.com" target="_blank">Friend 1</a>
+      <a href="https://friend2.com" target="_blank">Friend 2</a>
+      <a href="https://friend3.com" target="_blank">Friend 3</a>
+      <a href="https://friend4.com" target="_blank">Friend 4</a>
+    </div>
+
+    <!-- Right: Social Icons -->
+    <div class="footer-right">
+      <a href="https://instagram.com/yourpage" target="_blank"><img src="icons/instagram.png" alt="Instagram" /></a>
+      <a href="https://facebook.com/yourpage" target="_blank"><img src="icons/facebook.png" alt="Facebook" /></a>
+      <a href="https://twitter.com/yourpage" target="_blank"><img src="icons/twitter.png" alt="Twitter" /></a>
+    </div>
+  </div>
+
+  <!-- Bottom Text -->
+  <div class="footer-bottom">
+    <p>© 2025 FW SC Events. All rights reserved. 
+      <a href="privacy.html">Privacy Policy</a> | 
+      <a href="terms.html">Terms of Service</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
