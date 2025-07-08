@@ -24,10 +24,12 @@
     </div>
 
     <!-- Right: Search -->
-    <div class="search-box">
-      <input type="text" placeholder="Search..." />
-      <button onclick="search()"><img src="images/find.png"width="20"></button> 
-    </div>
+    <form class="search-box" onsubmit="search(); return false;">
+  <input type="text" id="search-input" placeholder="Search for events..." />
+  <button type="submit">
+    🔍
+  </button>
+</form>
   </header>
 
   <main class="main-content">
