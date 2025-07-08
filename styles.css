@@ -268,3 +268,42 @@ html, body {
   margin-left: 10px;
   text-decoration: underline;
 }
+/* Make navigation menu vertical and adjust spacing on small screens */
+@media only screen and (max-width: 600px) {
+  /* Change nav list to vertical layout */
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  /* Make nav links bigger and easier to tap */
+  nav ul li a {
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+  }
+
+  /* Adjust section padding for better spacing on small screens */
+  section {
+    padding: 20px 15px;
+  }
+
+  /* Make portfolio images full width and keep aspect ratio */
+  .portfolio img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Adjust heading font sizes for smaller screens */
+  h1, h2, h3 {
+    font-size: 1.5em;
+  }
+}
