@@ -401,3 +401,8 @@ html, body {
   justify-content: space-between;
   align-items: center;
 }
+.dropbtn:focus,
+a:focus,
+button:focus {
+  outline: 3px solid #ffcc00;
+}
