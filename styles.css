@@ -337,3 +337,22 @@ body {
     margin: 0 5px;
   }
 }
+/* Base styles... */
+
+@media (max-width: 768px) {
+  .site-header,
+  .footer-top,
+  .main-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .search-box {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .slide {
+    min-width: 100%;
+  }
+}
