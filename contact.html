@@ -6,6 +6,29 @@
   <link rel="stylesheet" href="contact.css" />
 </head>
 <body>
+  <!-- HEADER: Include this on ALL pages -->
+    <header class="site-header">
+      <!-- Dropdown Menu -->
+      <div class="dropdown">
+        <button class="dropbtn" id="menuBtn" aria-haspopup="true" aria-expanded="false">Menu</button>
+        <nav class="dropdown-content" id="menuDropdown" aria-label="Main navigation">
+          <a href="events.html">Events</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+      </div>
+
+      <!-- Logo -->
+      <div class="logo" aria-label="FW Events logo">
+        <img src="logo.png" alt="FW Events Logo" />
+      </div>
+
+      <!-- Search -->
+      <form class="search-box" onsubmit="search(); return false;" role="search" aria-label="Site search">
+        <input type="text" id="search-input" placeholder="Search for events..." aria-label="Search input" />
+        <button type="submit" aria-label="Submit search">🔍</button>
+      </form>
+    </header>
   <div class="contact-container">
     <h1>Contact Us</h1>
 
