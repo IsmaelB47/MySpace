@@ -396,3 +396,8 @@ html, body {
     font-size: 14px;
   }
 }
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
