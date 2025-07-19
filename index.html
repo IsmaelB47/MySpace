@@ -1,3 +1,4 @@
+<!-- Save as index.html or your homepage -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,88 +7,54 @@
 
     <!-- SEO Meta Tags -->
     <meta property="og:title" content="FW Events – Fort Wayne Event News & Articles">
-<meta property="og:image" content="https://ismaelb47.github.io/MySpace/images/og-image.jpg">
-
-    <meta
-      name="description"
-      content="Discover the latest Fort Wayne events including music, culture, and community news. Stay updated with FW Events today!"
-    />
-    <meta
-      name="keywords"
-      content="Fort Wayne events, live music Fort Wayne, Fort Wayne culture, local news, community events"
-    />
+    <meta property="og:image" content="https://ismaelb47.github.io/MySpace/images/og-image.jpg">
+    <meta name="description" content="Discover the latest Fort Wayne events including music, culture, and community news. Stay updated with FW Events today!" />
+    <meta name="keywords" content="Fort Wayne events, live music Fort Wayne, Fort Wayne culture, local news, community events" />
     <meta name="author" content="FW Events" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="FW Events - Fort Wayne Event News & Articles"
-    />
-    <meta
-      name="twitter:description"
-      content="Discover the latest events, articles, photos, and videos in Fort Wayne."
-    />
-    <meta
-      name="twitter:image"
-      content="https://yourwebsite.com/images/og-image.jpg"
-    />
+    <meta name="twitter:title" content="FW Events - Fort Wayne Event News & Articles" />
+    <meta name="twitter:description" content="Discover the latest events, articles, photos, and videos in Fort Wayne." />
+    <meta name="twitter:image" content="https://ismaelb47.github.io/MySpace/images/og-image.jpg" />
     <meta name="twitter:site" content="@YourTwitterHandle" />
 
     <title>FW Events | Latest Fort Wayne Music, Culture & Community News</title>
-
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <header class="site-header">
-      <!-- Left: Dropdown Menu -->
-      <div class="dropdown">
-        
-        <button class="dropbtn" aria-haspopup="true" aria-expanded="false" id="menuBtn">Menu</button>
 
-        <nav
-          class="dropdown-content"
-          id="menuDropdown"
-          aria-label="Main navigation"
-        >
-          <a href="events.html" target="_blank">Events</a>
-          <a href="faq.html" target="_blank">FAQ</a>
-          <a href="contact.html" target="_blank">Contact Us</a>
+  <body>
+    <!-- HEADER: Include this on ALL pages -->
+    <header class="site-header">
+      <!-- Dropdown Menu -->
+      <div class="dropdown">
+        <button class="dropbtn" id="menuBtn" aria-haspopup="true" aria-expanded="false">Menu</button>
+        <nav class="dropdown-content" id="menuDropdown" aria-label="Main navigation">
+          <a href="events.html">Events</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact Us</a>
         </nav>
       </div>
 
-      <!-- Center: Logo -->
+      <!-- Logo -->
       <div class="logo" aria-label="FW Events logo">
         <img src="logo.png" alt="FW Events Logo" />
       </div>
 
-      <!-- Right: Search -->
-      <form
-        class="search-box"
-        onsubmit="search(); return false;"
-        role="search"
-        aria-label="Site search"
-      >
-        <input
-          type="text"
-          id="search-input"
-          placeholder="Search for events..."
-          aria-label="Search input"
-        />
+      <!-- Search -->
+      <form class="search-box" onsubmit="search(); return false;" role="search" aria-label="Site search">
+        <input type="text" id="search-input" placeholder="Search for events..." aria-label="Search input" />
         <button type="submit" aria-label="Submit search">🔍</button>
       </form>
     </header>
 
+    <!-- MAIN -->
     <main class="main-content">
       <h1>Welcome to Fort Wayne Events Area</h1>
-      <p>
-        <strong
-          >We are here to make it easy looking for an event makes you
-          happy.</strong
-        >
-      </p>
+      <p><strong>We are here to make it easy to find events that make you happy.</strong></p>
     </main>
 
+    <!-- SLIDER -->
     <section class="event-slider">
       <h2>Latest Events</h2>
       <div class="slider">
@@ -96,62 +63,47 @@
           <div class="slide-text">
             <h3>Music Night</h3>
             <p>Experience the magic of live performances...</p>
-            <a href="events.html" target="_blank">Read More →</a>
+            <a href="events.html">Read More →</a>
           </div>
         </div>
-
         <div class="slide">
           <img src="images/event2.jpg" alt="Cultural celebration event image" />
           <div class="slide-text">
             <h3>Culture Fest</h3>
             <p>Discover vibrant traditions from around the world...</p>
-            <a href="events.html" target="_blank">Read More →</a>
+            <a href="events.html">Read More →</a>
           </div>
         </div>
-
         <div class="slide">
           <img src="images/event3.jpg" alt="Summer ticket promo event" />
           <div class="slide-text">
             <h3>Summer Promo</h3>
             <p>Buy your ticket now only for ...</p>
-            <a href="events.html" target="_blank">Read More →</a>
+            <a href="events.html">Read More →</a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="site-footer">
       <div class="footer-top">
-        <!-- Left: Logo -->
         <div class="footer-left">
-          <a href="index.html">
-  <img src="logo.png" alt="FW Events logo">
-</a>
-
+          <a href="index.html"><img src="logo.png" alt="FW Events logo"></a>
         </div>
-
-        <!-- Center: Friend Links -->
         <div class="footer-center">
-          <a href="https://friend1.com" target="_blank">Friend 1</a>
-          <a href="https://friend2.com" target="_blank">Friend 2</a>
-          <a href="https://friend3.com" target="_blank">Friend 3</a>
-          <a href="https://friend4.com" target="_blank">Friend 4</a>
+          <!-- Use # or real links -->
+          <a href="#">Friend 1</a>
+          <a href="#">Friend 2</a>
+          <a href="#">Friend 3</a>
+          <a href="#">Friend 4</a>
         </div>
-
-        <!-- Right: Social Icons -->
         <div class="footer-right">
-          <a href="https://instagram.com/yourpage" target="_blank"
-            ><img src="images/instagram.png" alt="Instagram icon"
-          /></a>
-          <a href="https://facebook.com/yourpage" target="_blank"
-            ><img src="images/facebook.png" alt="Facebook icon"
-          /></a>
-          <a href="https://twitter.com/yourpage" target="_blank"
-            ><img src="images/twitter.png" alt="Twitter icon"
-          /></a>
+          <a href="https://instagram.com/yourpage" target="_blank"><img src="images/instagram.png" alt="Instagram icon" /></a>
+          <a href="https://facebook.com/yourpage" target="_blank"><img src="images/facebook.png" alt="Facebook icon" /></a>
+          <a href="https://twitter.com/yourpage" target="_blank"><img src="images/twitter.png" alt="Twitter icon" /></a>
         </div>
       </div>
-
       <div class="footer-bottom">
         <p>
           © 2025 FW SC Events. All rights reserved.
@@ -161,7 +113,7 @@
       </div>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- JS -->
     <script>
       document.querySelector(".dropbtn").addEventListener("click", function () {
         document.getElementById("menuDropdown").classList.toggle("show");
@@ -177,23 +129,16 @@
       });
 
       function search() {
-        const value = document
-          .getElementById("search-input")
-          .value.trim()
-          .toLowerCase();
+        const value = document.getElementById("search-input").value.trim().toLowerCase();
         if (value) {
           const found = document.body.innerText.toLowerCase().includes(value);
-          if (found) {
-            alert("Match found for: " + value);
-          } else {
-            alert("No matches found.");
-          }
+          alert(found ? "Match found for: " + value : "No matches found.");
         } else {
           alert("Please enter a search term.");
         }
       }
 
-      // Slider Logic
+      // Simple Slider
       let index = 0;
       const slides = document.querySelectorAll(".slide");
       setInterval(() => {
