@@ -1,27 +1,34 @@
-/* Reset & base */
+/* styles.css */
+
+/* Reset some default styles */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
 }
 
-html, body {
-  height: 100%;
-  width: 100%;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom right, #f5f8fc, #e3ebf5);
+/* Body and overall background */
+body {
+  background-color: #f5f7fa;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Header styling */
 .site-header {
-  height: 100px;
-  background-color: #004080;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-end;
-  padding: 0 40px 10px 40px;
-  position: relative;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #004080;
+  padding: 10px 20px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 /* Dropdown */
@@ -30,201 +37,205 @@ html, body {
 }
 
 .dropbtn {
-  background: linear-gradient(to bottom, #0072e3, #003d7a);
-  color: white;
-  padding: 12px 24px;
-  font-size: 16px;
+  background-color: #0066cc;
   border: none;
+  padding: 10px 16px;
+  color: white;
+  font-size: 1rem;
   cursor: pointer;
-  font-weight: bold;
-  border-radius: 10px;
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-bottom: 5px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-.dropbtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: #004a99;
+  outline: none;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 55px;
+  background-color: white;
+  min-width: 140px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  top: 110%;
   left: 0;
-  background-color: #ffffff;
-  min-width: 180px;
-  border-radius: 12px;
-  box-shadow: 6px 8px 20px rgba(0, 0, 0, 0.3);
-  overflow: hidden;
-  z-index: 20;
-}
-
-.dropdown-content.show {
-  display: block;
+  z-index: 1001;
 }
 
 .dropdown-content a {
-  background: linear-gradient(to bottom, #e6f0ff, #ccdfff);
-  color: #003366;
-  padding: 14px 20px;
+  color: #004080;
+  padding: 10px 14px;
   text-decoration: none;
   display: block;
-  font-weight: bold;
-  transition: transform 0.2s, background 0.3s;
-  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease;
 }
 
-.dropdown-content a:hover {
-  background: linear-gradient(to bottom, #cce0ff, #b3d1ff);
-  transform: translateY(-2px) scale(1.03);
+.dropdown-content a:hover,
+.dropdown-content a:focus {
+  background-color: #f0f8ff;
+  outline: none;
 }
 
-/* Center logo */
+/* Show dropdown when toggled */
+.show {
+  display: block;
+}
+
+/* Logo styling */
 .logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.logo img {
-  height: 60px;
-}
-
-/* Search Box */
-/* SEARCH BOX STYLE */
-.search-box {
+  flex-grow: 1;
   display: flex;
   justify-content: center;
+}
+
+.logo-img {
+  height: 50px; /* Adjust size of your transparent logo */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Search form */
+.search-box {
+  display: flex;
   align-items: center;
-  background-color: white;
-  border: 2px solid #ccc;
-  border-radius: 25px;
-  overflow: hidden;
-  max-width: 300px;
-  margin-left: auto;
-  margin-right: 20px;
 }
 
 .search-box input[type="text"] {
-  flex: 1;
+  padding: 8px 12px;
   border: none;
-  padding: 10px 15px;
-  font-size: 16px;
-  border-radius: 25px 0 0 25px;
+  border-radius: 4px 0 0 4px;
+  font-size: 1rem;
+  width: 180px;
+  transition: width 0.3s ease;
+}
+
+.search-box input[type="text"]:focus {
+  width: 220px;
   outline: none;
 }
 
 .search-box button {
-  background-color: #333;
-  color: white;
-  padding: 10px 16px;
-  font-size: 16px;
+  background-color: #0066cc;
   border: none;
-  border-radius: 0 25px 25px 0;
+  padding: 8px 14px;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 0 4px 4px 0;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-.search-box button:hover {
-  background-color: #555;
+.search-box button:hover,
+.search-box button:focus {
+  background-color: #004a99;
+  outline: none;
 }
 
-/* Responsive tweak */
-@media (max-width: 600px) {
-  .search-box {
-    max-width: 100%;
-    margin: 10px;
-  }
-}
-  /* Main Content */
+/* Main content */
 .main-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  max-width: 900px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
   text-align: center;
-  padding: 60px 20px;
+  color: #004080;
 }
 
 .main-content h1 {
-  font-size: 36px;
-  color: #003366;
-  margin-bottom: 20px;
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+  font-weight: 700;
 }
 
 .main-content p {
-  font-size: 18px;
-  color: #333;
-  max-width: 600px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #0066cc, #004080);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
+/* Event slider */
 .event-slider {
-  padding: 40px 20px;
-  background: #eef2f7;
-  text-align: center;
+  max-width: 940px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
 }
 
 .event-slider h2 {
+  font-size: 2rem;
   color: #004080;
-  margin-bottom: 30px;
-  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-align: center;
 }
 
+/* Slider container */
 .slider {
   display: flex;
   overflow: hidden;
   gap: 20px;
-  justify-content: center;
   position: relative;
-  width: 100%;
-  max-width: 1000px;
-  margin: auto;
+  justify-content: center;
 }
 
+/* Each slide */
 .slide {
   min-width: 300px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.5s ease;
-  flex-shrink: 0;
 }
 
 .slide img {
   width: 100%;
-  height: 180px;
+  display: block;
   object-fit: cover;
+  height: 180px;
 }
 
 .slide-text {
-  padding: 15px;
+  padding: 15px 20px;
+  color: #004080;
 }
 
 .slide-text h3 {
-  color: #003366;
   margin-bottom: 10px;
+  font-size: 1.4rem;
 }
 
 .slide-text p {
-  font-size: 14px;
-  color: #555;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: #333;
 }
 
 .slide-text a {
-  display: inline-block;
-  margin-top: 10px;
-  color: #004080;
+  color: #0066cc;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: bold;
+  transition: color 0.2s ease;
 }
+
+.slide-text a:hover,
+.slide-text a:focus {
+  color: #004080;
+  outline: none;
+}
+
+/* Footer */
 .site-footer {
   background-color: #004080;
   color: white;
-  padding: 30px 20px 10px;
-  font-family: 'Segoe UI', sans-serif;
+  padding: 20px 10px 10px;
+  margin-top: auto;
+  font-size: 0.9rem;
 }
 
 .footer-top {
@@ -232,177 +243,97 @@ html, body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding-bottom: 20px;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #2a4d7b;
 }
 
 .footer-left img {
-  height: 50px;
-}
-
-.footer-center {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
+  height: 40px;
+  object-fit: contain;
 }
 
 .footer-center a {
-  color: white;
+  color: #a0c4ff;
+  margin: 0 10px;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
 }
 
-.footer-center a:hover {
-  color: #ffcc00;
+.footer-center a:hover,
+.footer-center a:focus {
+  color: white;
+  outline: none;
 }
 
 .footer-right a img {
   height: 28px;
-  margin-left: 15px;
-  transition: transform 0.2s ease;
+  margin: 0 8px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
 }
 
-.footer-right a:hover img {
-  transform: scale(1.1);
+.footer-right a:hover img,
+.footer-right a:focus img {
+  filter: brightness(0.8) invert(0.8);
+  outline: none;
 }
 
 .footer-bottom {
   text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
+  margin-top: 10px;
+  border-top: 1px solid #2a4d7b;
+  padding-top: 8px;
+  font-size: 0.8rem;
+  color: #a0b8db;
 }
 
-.footer-bottom a {
-  color: #cce0ff;
-  margin-left: 10px;
-  text-decoration: underline;
-}
-/* Make navigation menu vertical and adjust spacing on small screens */
-@media only screen and (max-width: 600px) {
-  /* Change nav list to vertical layout */
-  nav ul {
-    display: flex;
-    flex-direction: column;
-    padding-left: 0;
-    margin: 0;
-    list-style-type: none;
+/* Responsive: Mobile */
+@media (max-width: 700px) {
+  .site-header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
 
-  nav ul li {
+  .dropdown,
+  .search-box {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo {
+    flex-basis: 100%;
+    justify-content: center;
     margin: 10px 0;
-    text-align: center;
   }
 
-  /* Make nav links bigger and easier to tap */
-  nav ul li a {
-    font-size: 18px;
-    padding: 10px;
-    display: block;
+  .search-box input[type="text"] {
+    width: 70vw;
   }
 
-  /* Adjust section padding for better spacing on small screens */
-  section {
-    padding: 20px 15px;
+  .slider {
+    justify-content: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
   }
 
-  /* Make portfolio images full width and keep aspect ratio */
-  .portfolio img {
-    width: 100%;
-    height: auto;
+  .slide {
+    scroll-snap-align: center;
+    min-width: 80vw;
   }
 
-  /* Adjust heading font sizes for smaller screens */
-  h1, h2, h3 {
-    font-size: 1.5em;
-  }
-}
-/* ===== Mobile Responsive Design (Max Width 600px) ===== */
-@media only screen and (max-width: 600px) {
-  
-  /* NAVIGATION MENU */
-  nav {
-    padding: 10px 0;
-    background-color: #333;
-  }
-
-  nav ul {
-    display: flex;
+  .footer-top {
     flex-direction: column;
     align-items: center;
-    padding-left: 0;
-    margin: 0;
-    list-style-type: none;
   }
 
-  nav ul li {
-    margin: 8px 0;
+  .footer-center a {
+    margin: 5px;
   }
 
-  nav ul li a {
-    font-size: 18px;
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    display: block;
-    width: 100%;
-    text-align: center;
+  .footer-right a img {
+    margin: 0 5px;
   }
-
-  /* SECTIONS */
-  section {
-    padding: 20px 15px;
-  }
-
-  /* HEADINGS */
-  h1 {
-    font-size: 28px;
-    text-align: center;
-  }
-
-  h2, h3 {
-    font-size: 22px;
-    text-align: center;
-  }
-
-  /* PARAGRAPHS */
-  p {
-    font-size: 16px;
-    line-height: 1.6;
-    text-align: center;
-  }
-
-  /* IMAGES */
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-  }
-
-  /* CONTACT OR BUTTONS */
-  .btn, button, input[type="submit"] {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    margin-top: 10px;
-  }
-
-  /* FOOTER */
-  footer {
-    text-align: center;
-    padding: 20px 10px;
-    font-size: 14px;
-  }
-}
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.dropbtn:focus,
-a:focus,
-button:focus {
-  outline: 3px solid #ffcc00;
 }
