@@ -1,4 +1,4 @@
-/* styles.css */
+/* contact.css */
 
 /* Base styles for desktops and larger screens */
 
@@ -6,36 +6,12 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-}
+  background-color: #f5f7fa;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
 
-/* Example: Responsive rule for tablets and smaller */
-@media (max-width: 768px) {
-  .contact-container,
-  .faq-container,
-  .terms-container {
-    padding: 20px;
-    margin: 20px auto;
-    font-size: 14px;
-  }
-
-  .site-footer {
-    font-size: 13px;
-    padding: 10px;
-  }
-
-  .search-box {
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .slider {
-    flex-direction: column;
-  }
-
-  .slide {
-    width: 100%;
-    margin-bottom: 20px;
-  }
+  flex-direction: column;
 }
 
 /* Reset some default styles */
@@ -47,26 +23,20 @@ body {
   color: #333;
 }
 
-/* Body and overall background */
-body {
-  background-color: #f5f7fa;
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 /* Header styling */
 .site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #004080;
-  padding: 10px 20px;
+  background-color: rgba(0, 64, 128, 0.9);
+  padding: 6px 20px;
   color: white;
   position: sticky;
-  top: 0;
+  top: 10px;
   z-index: 1000;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  margin: 6px 10px;
 }
 
 /* Dropdown */
@@ -75,20 +45,22 @@ body {
 }
 
 .dropbtn {
-  background-color: #0066cc;
+  background-color: rgba(255, 255, 255, 0.15);
   border: none;
-  padding: 10px 16px;
+  padding: 8px 14px;
   color: white;
   font-size: 1rem;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 6px;
+  box-shadow: none;
   transition: background-color 0.3s ease;
 }
 
 .dropbtn:hover,
 .dropbtn:focus {
-  background-color: #004a99;
+  background-color: rgba(255, 255, 255, 0.3);
   outline: none;
+  box-shadow: none;
 }
 
 .dropdown-content {
@@ -119,12 +91,10 @@ body {
   outline: none;
 }
 
-/* Show dropdown when toggled */
 .show {
   display: block;
 }
 
-/* Logo styling */
 .logo {
   flex-grow: 1;
   display: flex;
@@ -132,12 +102,11 @@ body {
 }
 
 .logo-img {
-  height: 50px; /* Adjust size of your transparent logo */
+  height: 50px;
   width: auto;
   object-fit: contain;
 }
 
-/* Search form */
 .search-box {
   display: flex;
   align-items: center;
@@ -150,15 +119,23 @@ body {
   font-size: 1rem;
   width: 180px;
   transition: width 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  box-shadow: none;
+}
+
+.search-box input[type='text']::placeholder {
+  color: #e0e0e0;
 }
 
 .search-box input[type='text']:focus {
   width: 220px;
   outline: none;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .search-box button {
-  background-color: #0066cc;
+  background-color: rgba(255, 255, 255, 0.15);
   border: none;
   padding: 8px 14px;
   color: white;
@@ -166,18 +143,13 @@ body {
   border-radius: 0 4px 4px 0;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  box-shadow: none;
 }
 
 .search-box button:hover,
 .search-box button:focus {
-  background-color: #004a99;
+  background-color: rgba(255, 255, 255, 0.3);
   outline: none;
-}
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-  margin: 0;
-  padding: 0;
 }
 
 .contact-container {
@@ -226,14 +198,15 @@ button {
 button:hover {
   background-color: #0066cc;
 }
-/* ------------------------------------ */
+
 /* Footer */
 .site-footer {
-  background-color: #004080;
+  background-color: rgba(0, 64, 128, 0.9);
   color: white;
   padding: 20px 10px 10px;
   margin-top: auto;
   font-size: 0.9rem;
+  backdrop-filter: blur(5px);
 }
 
 .footer-top {
@@ -286,19 +259,26 @@ button:hover {
   color: #f5f5f5;
 }
 
-/* Responsive: Mobile */
-@media (max-width: 700px) {
-  .site-header {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container,
+  .faq-container,
+  .terms-container {
+    padding: 20px;
+    margin: 20px auto;
+    font-size: 14px;
   }
 
-  .dropdown,
+  .site-header,
+  .footer-top,
+  .main-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
   .search-box {
-    flex: 1 1 100%;
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
   }
 
   .logo {
@@ -309,17 +289,6 @@ button:hover {
 
   .search-box input[type='text'] {
     width: 70vw;
-  }
-
-  .slider {
-    justify-content: flex-start;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-  }
-
-  .slide {
-    scroll-snap-align: center;
-    min-width: 80vw;
   }
 
   .footer-top {
@@ -335,25 +304,7 @@ button:hover {
     margin: 0 5px;
   }
 }
-/* Base styles... */
 
-@media (max-width: 768px) {
-  .site-header,
-  .footer-top,
-  .main-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .search-box {
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .slide {
-    min-width: 100%;
-  }
-}
 /* back home button */
 a button {
   background-color: #004080;
