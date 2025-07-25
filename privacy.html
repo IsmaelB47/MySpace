@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privecy Policy</title>
+    <link rel="stylesheet" href="privacy.css" />
+  </head>
+  <body>
+    <!-- HEADER: Include this on ALL pages -->
+    <header class="site-header">
+      <!-- Dropdown Menu -->
+      <div class="dropdown">
+        <button
+          class="dropbtn"
+          id="menuBtn"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Menu
+        </button>
+        <nav
+          class="dropdown-content"
+          id="menuDropdown"
+          aria-label="Main navigation"
+        >
+          <a href="events.html">Events</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+      </div>
+
+      <!-- Logo -->
+      <div class="logo" aria-label="FW Events logo">
+        <img src="logo.png" alt="FW Events Logo" />
+      </div>
+
+      <!-- Search -->
+      <form
+        class="search-box"
+        onsubmit="search(); return false;"
+        role="search"
+        aria-label="Site search"
+      >
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search for events..."
+          aria-label="Search input"
+        />
+        <button type="submit" aria-label="Submit search">🔍</button>
+      </form>
+    </header>
+    <!-- ---------------------------------------------- -->
+    <!-- JS -->
+    <script src="scripts.js" defer></script>
+
+    <!-- -->
+    <div class="privacy-container">
+      <h1>Privacy Policy</h1>
+      <p>Last updated: July 20, 2025</p>
+
+      <p>
+        Welcome to MySpace! Your privacy is important to us. This Privacy Policy
+        explains how we collect, use, and protect your information when you
+        visit our website at
+        <a href="https://ismaelb47.github.io/MySpace/"
+          >https://ismaelb47.github.io/MySpace/</a
+        >.
+      </p>
+
+      <h2>Information We Collect</h2>
+      <ul>
+        <li>
+          Personal Information (only if you voluntarily provide it via contact
+          forms)
+        </li>
+        <li>
+          Non-personal data like browser type, time spent, and pages visited
+          (via analytics)
+        </li>
+      </ul>
+
+      <h2>How We Use Your Information</h2>
+      <ul>
+        <li>To respond to your questions or messages</li>
+        <li>To improve our website and content</li>
+        <li>To ensure security and prevent abuse</li>
+      </ul>
+
+      <h2>Third-Party Links</h2>
+      <p>
+        Our site may contain links to third-party websites. We are not
+        responsible for the content or privacy practices of those sites.
+      </p>
+
+      <h2>Cookies</h2>
+      <p>
+        We may use cookies to improve user experience. You can disable cookies
+        in your browser settings.
+      </p>
+
+      <h2>Your Rights</h2>
+      <p>
+        You have the right to request deletion or correction of any personal
+        data you have shared with us.
+      </p>
+
+      <h2>Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. Please review this
+        page regularly for any changes.
+      </p>
+
+      <h2>Contact Us</h2>
+      <p>
+        If you have any questions about this Privacy Policy, please
+        <a href="contact.html">contact us</a>.
+      </p>
+
+      <div class="back-home">
+        <a href="index.html"><button>Back to Home</button></a>
+      </div>
+    </div>
+  </body>
+</html>
