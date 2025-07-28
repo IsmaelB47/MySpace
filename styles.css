@@ -116,7 +116,7 @@ body {
 }
 
 .logo img {
-  height: 100%;        /* Take full height of the header */
+  height: 20%;        /* Take full height of the header */
   transform: scale(1.2); /* Make the logo appear 20% bigger */
   transform-origin: center;
 }
