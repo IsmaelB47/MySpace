@@ -107,16 +107,21 @@ body {
 }
 
 /* Logo styling */
+/* Logo container */
 .logo {
   flex-grow: 1;
   display: flex;
   justify-content: center;
+  align-items: center; /* Make sure it's vertically aligned */
+  padding: 10px; /* Optional: add space around */
 }
 
+/* Actual logo image */
 .logo img {
-  height: 44px;
+  height: 200px; /* Increase this to make it bigger */
   width: auto;
   object-fit: contain;
+  max-height: 100%; /* Optional safety */
 }
 
 /* Search form */
