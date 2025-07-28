@@ -105,24 +105,22 @@ body {
   transform: translateY(0) !important;
   pointer-events: auto !important;
 }
-
-/* Logo styling */
-/* Logo container */
+/* logo */
 .logo {
   flex-grow: 1;
   display: flex;
   justify-content: center;
-  align-items: center; /* Make sure it's vertically aligned */
-  padding: 10px; /* Optional: add space around */
+  align-items: center;
+  overflow: visible; /* Allow logo to overflow if needed */
+  position: relative;
 }
 
-/* Actual logo image */
 .logo img {
-  height: 200px; /* Increase this to make it bigger */
-  width: auto;
-  object-fit: contain;
-  max-height: 100%; /* Optional safety */
+  height: 100%;        /* Take full height of the header */
+  transform: scale(1.2); /* Make the logo appear 20% bigger */
+  transform-origin: center;
 }
+  
 
 /* Search form */
 .search-box {
