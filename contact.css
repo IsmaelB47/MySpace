@@ -1,19 +1,3 @@
-/* contact.css */
-
-/* Base styles for desktops and larger screens */
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f5f7fa;
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-
-  flex-direction: column;
-}
-
 /* Reset some default styles */
 * {
   box-sizing: border-box;
@@ -23,20 +7,34 @@ body {
   color: #333;
 }
 
+/* Body and overall background */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fa;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
 /* Header styling */
 .site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(0, 64, 128, 0.9);
-  padding: 6px 20px;
+  background-color: rgba(0, 64, 128, 0.85); /* semi-transparent navy */
+  padding: 8px 20px;
   color: white;
   position: sticky;
-  top: 10px;
+  top: 12px; /* slight offset downward */
   z-index: 1000;
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
-  margin: 6px 10px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  margin: 0 10px;
+  font-size: 0.95rem;
 }
 
 /* Dropdown */
@@ -45,39 +43,44 @@ body {
 }
 
 .dropbtn {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: transparent;
   border: none;
   padding: 8px 14px;
   color: white;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 6px;
-  box-shadow: none;
   transition: background-color 0.3s ease;
+  outline: none;
+  box-shadow: none;
 }
 
 .dropbtn:hover,
 .dropbtn:focus {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.15);
   outline: none;
   box-shadow: none;
 }
 
 .dropdown-content {
-  display: none;
+  display: block; /* controlled by opacity & pointer-events */
   position: absolute;
   background-color: white;
-  min-width: 140px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  top: 110%;
+  min-width: 160px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  top: 130%;
   left: 0;
+  opacity: 0;
+  transform: translateY(-15px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 1001;
 }
 
 .dropdown-content a {
   color: #004080;
-  padding: 10px 14px;
+  padding: 12px 16px;
   text-decoration: none;
   display: block;
   font-weight: 600;
@@ -91,194 +94,150 @@ body {
   outline: none;
 }
 
+/* Show dropdown */
 .show {
-  display: block;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
 }
-
-.logo {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.logo-img {
-  height: 50px;
-  width: auto;
-  object-fit: contain;
-}
-
+/* Search form */
 .search-box {
   display: flex;
   align-items: center;
+  background-color: transparent;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: none;
 }
 
 .search-box input[type="text"] {
   padding: 8px 12px;
   border: none;
-  border-radius: 4px 0 0 4px;
+  border-radius: 6px 0 0 6px;
   font-size: 1rem;
   width: 180px;
   transition: width 0.3s ease;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.15);
   color: white;
+  outline: none;
   box-shadow: none;
 }
 
-.search-box input[type="text"]::placeholder {
-  color: #e0e0e0;
+.search-box input::placeholder {
+  color: #eee;
 }
 
 .search-box input[type="text"]:focus {
   width: 220px;
+  background-color: rgba(255, 255, 255, 0.3);
   outline: none;
-  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: none;
 }
 
 .search-box button {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: transparent;
   border: none;
   padding: 8px 14px;
   color: white;
-  font-size: 1.2rem;
-  border-radius: 0 4px 4px 0;
+  font-size: 1.3rem;
+  border-radius: 0 6px 6px 0;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  outline: none;
   box-shadow: none;
 }
 
 .search-box button:hover,
 .search-box button:focus {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
   outline: none;
+  box-shadow: none;
 }
 
-.contact-container {
-  max-width: 500px;
+/* Articles container */
+.events-container {
+  max-width: 900px;
   margin: 50px auto;
-  background: white;
   padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-h2 {
-  text-align: center;
+/* Individual post cards */
+.post-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.post-card h2 {
   color: #004080;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
-table {
-  width: 100%;
+.post-card img {
+  max-width: 100%;
+  margin-top: 15px;
+  border-radius: 8px;
 }
 
-td {
-  padding: 10px;
-  vertical-align: top;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-button {
-  background-color: #004080;
+/* Delete button */
+.post-card button {
+  margin-top: 15px;
+  background-color: #cc0000;
   color: white;
-  padding: 10px 20px;
   border: none;
-  border-radius: 6px;
+  padding: 10px 20px;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 3px 6px rgba(204, 0, 0, 0.5);
 }
 
-button:hover {
-  background-color: #0066cc;
+.post-card button:hover {
+  background-color: #ff0000;
+  box-shadow: 0 5px 12px rgba(255, 0, 0, 0.7);
 }
 
 /* Footer */
 .site-footer {
-  background-color: rgba(0, 64, 128, 0.9);
-  color: white;
-  padding: 20px 10px 10px;
-  margin-top: auto;
-  font-size: 0.9rem;
-  backdrop-filter: blur(5px);
-}
-
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #2a4d7b;
-}
-
-.footer-left img {
-  height: 40px;
-  object-fit: contain;
-}
-
-.footer-center a {
-  color: #a0c4ff;
-  margin: 0 10px;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.footer-center a:hover,
-.footer-center a:focus {
-  color: white;
-  outline: none;
-}
-
-.footer-right a img {
-  height: 28px;
-  margin: 0 8px;
-  filter: brightness(0) invert(1);
-  transition: filter 0.3s ease;
-}
-
-.footer-right a:hover img,
-.footer-right a:focus img {
-  filter: brightness(0.8) invert(0.8);
-  outline: none;
-}
-
-.footer-bottom {
+  background-color: rgba(0, 64, 128, 0.85);
+  color: #f0e68c;
   text-align: center;
-  margin-top: 10px;
-  border-top: 1px solid #2a4d7b;
-  padding-top: 8px;
-  font-size: 0.8rem;
-  color: #f5f5f5;
+  padding: 15px 10px;
+  font-size: 15px;
+  margin-top: auto;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  margin: 0 10px;
 }
 
-/* Responsive */
+.site-footer a {
+  color: #fffacd;
+  text-decoration: none;
+  margin: 0 8px;
+  font-weight: 600;
+}
+
+.site-footer a:hover {
+  color: #ffffe0;
+  text-decoration: underline;
+}
+
+/* Responsive styles */
 @media (max-width: 768px) {
-  .contact-container,
-  .faq-container,
-  .terms-container {
-    padding: 20px;
-    margin: 20px auto;
-    font-size: 14px;
+  .site-header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
 
-  .site-header,
-  .footer-top,
-  .main-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
+  .dropdown,
   .search-box {
-    width: 100%;
-    margin-top: 10px;
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .logo {
@@ -291,30 +250,123 @@ button:hover {
     width: 70vw;
   }
 
-  .footer-top {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-center a {
-    margin: 5px;
-  }
-
-  .footer-right a img {
-    margin: 0 5px;
+  .events-container {
+    padding: 20px 15px;
   }
 }
+/* Contact Us container styling */
+.contact-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
 
-/* back home button */
-a button {
+/* Contact heading */
+.contact-container h2 {
+  text-align: center;
+  color: #004080;
+  margin-bottom: 20px;
+}
+
+/* Contact table styling */
+.contact-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.contact-container td {
+  padding: 12px 10px;
+  vertical-align: top;
+}
+
+.contact-container label {
+  font-weight: bold;
+  color: #004080;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.contact-container input[type="text"],
+.contact-container input[type="email"],
+.contact-container textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease;
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+  border-color: #0077cc;
+  outline: none;
+  background-color: #fff;
+}
+
+.contact-container textarea {
+  resize: vertical;
+}
+
+/* Submit button */
+.contact-container button[type="submit"] {
+  padding: 12px 30px;
   background-color: #004080;
   color: white;
-  padding: 10px 20px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 64, 128, 0.3);
+  transition: background-color 0.3s ease;
 }
 
-a button:hover {
+.contact-container button[type="submit"]:hover {
   background-color: #0066cc;
+}
+
+/* Back Home button */
+div a button[type="button"] {
+  padding: 10px 24px;
+  margin-top: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #004080;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+div a button[type="button"]:hover {
+  background-color: #0059b3;
+}
+
+/* Responsive Contact Form */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 20px 15px;
+  }
+
+  .contact-container td {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .contact-container tr {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .contact-container button[type="submit"] {
+    width: 100%;
+  }
 }
