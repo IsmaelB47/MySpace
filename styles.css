@@ -66,7 +66,6 @@ body {
 
 /* Dropdown content */
 .dropdown-content {
-  display: block;
   position: absolute;
   background-color: white;
   min-width: 160px;
@@ -97,7 +96,7 @@ body {
   outline: none;
 }
 
-.show {
+.dropdown-content.show {
   opacity: 1 !important;
   transform: translateY(0) !important;
   pointer-events: auto !important;
@@ -321,6 +320,7 @@ header {
   object-fit: contain;
   pointer-events: none;
 }
+
 .footer-center a {
   color: #a0c4ff;
   margin: 0 5px;
@@ -477,4 +477,9 @@ header {
 .articles-table tbody tr:hover {
   background-color: #f2f6fa;
   transition: background-color 0.3s ease;
+}
+
+/* slide dropdown */
+.slide {
+  transition: transform 0.5s ease-in-out;
 }
