@@ -483,3 +483,7 @@ header {
 .slide {
   transition: transform 0.5s ease-in-out;
 }
+.footer-copy {
+  color: white; /* or #fff */
+}
+
