@@ -1,4 +1,3 @@
-<!-- Save as index.html or your homepage -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -45,9 +44,8 @@
   </head>
 
   <body>
-    <!-- HEADER: Include this on ALL pages -->
+    <!-- HEADER -->
     <header class="site-header">
-      <!-- Dropdown Menu -->
       <div class="dropdown">
         <button
           class="dropbtn"
@@ -64,7 +62,7 @@
           class="dropdown-content"
           id="menuDropdown"
           aria-label="Main navigation"
-          hidden
+          aria-hidden="true"
         >
           <a href="events.html">Events</a>
           <a href="gallery.html">Gallery</a>
@@ -73,12 +71,10 @@
         </nav>
       </div>
 
-      <!-- Logo -->
       <div class="logo" aria-label="FW Events logo">
         <img src="images/logo.png" alt="FW Events Logo" />
       </div>
 
-      <!-- Search -->
       <form
         class="search-box"
         onsubmit="return search();"
@@ -138,7 +134,7 @@
       </div>
     </section>
 
-    <!--    Table  -->
+    <!-- Articles Table -->
     <section class="articles-table-section">
       <table class="articles-table">
         <thead>
@@ -175,12 +171,11 @@
     <footer class="site-footer">
       <div class="footer-top">
         <div class="footer-left">
-          <a href="index.html"
-            ><img src="images/logo.png" alt="FW Events logo"
-          /></a>
+          <a href="index.html">
+            <img src="images/logo.png" alt="FW Events logo" />
+          </a>
         </div>
         <div class="footer-center">
-          <!-- Use # or real links -->
           <a
             href="https://artsunited.org/get-involved/view-events/?gad_source=1&gad_campaignid=12736434403&gclid=Cj0KCQjwhO3DBhDkARIsANxrhTqN_LlEwLJCE9CXzeahTtjWJsOSCBAQzAMZSA_kzHEGc_CCCn43KDAaAgB1EALw_wcB"
             target="_blank"
@@ -219,9 +214,8 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="site-footer">
+        <p class="footer-copy">
           © 2025 FW SC Events. All rights reserved.
-
           <a href="privacy.html">Privacy Policy</a> |
           <a href="terms.html">Terms of Service</a>
         </p>
