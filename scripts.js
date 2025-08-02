@@ -49,3 +49,14 @@ setInterval(() => {
   });
   index = (index + 1) % slides.length;
 }, 4000);
+// Wait for the DOM to be fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+  const menuBtn = document.getElementById("menuBtn");
+  if (menuBtn) {
+    menuBtn.addEventListener("click", function (e) {
+      e.stopPropagation(); // Prevent click from closing the dropdown
+      toggleMenu();
+    });
+  }
+});
+
