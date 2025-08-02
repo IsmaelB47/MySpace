@@ -54,6 +54,9 @@
           id="menuBtn"
           aria-haspopup="true"
           aria-expanded="false"
+          aria-controls="menuDropdown"
+          aria-label="Toggle main menu"
+          onclick="toggleMenu()"
         >
           Menu
         </button>
@@ -61,6 +64,7 @@
           class="dropdown-content"
           id="menuDropdown"
           aria-label="Main navigation"
+          hidden
         >
           <a href="events.html">Events</a>
           <a href="gallery.html">Gallery</a>
@@ -77,7 +81,7 @@
       <!-- Search -->
       <form
         class="search-box"
-        onsubmit="search(); return false;"
+        onsubmit="return search();"
         role="search"
         aria-label="Site search"
       >
@@ -86,6 +90,7 @@
           id="search-input"
           placeholder="Search for events..."
           aria-label="Search input"
+          required
         />
         <button type="submit" aria-label="Submit search">🔍</button>
       </form>
@@ -111,7 +116,7 @@
           <div class="slide-text">
             <h3>Music Night</h3>
             <p>Experience the magic of live performances...</p>
-            <a href="events.html">Read More →</a>
+            <a href="events.html#music-night">Read More →</a>
           </div>
         </div>
         <div class="slide">
@@ -119,7 +124,7 @@
           <div class="slide-text">
             <h3>Culture Fest</h3>
             <p>Discover vibrant traditions from around the world...</p>
-            <a href="events.html">Read More →</a>
+            <a href="events.html#culture-fest">Read More →</a>
           </div>
         </div>
         <div class="slide">
@@ -127,11 +132,12 @@
           <div class="slide-text">
             <h3>Summer Promo</h3>
             <p>Buy your ticket now only for ...</p>
-            <a href="events.html">Read More →</a>
+            <a href="events.html#summer-promo">Read More →</a>
           </div>
         </div>
       </div>
     </section>
+
     <!--    Table  -->
     <section class="articles-table-section">
       <table class="articles-table">
@@ -140,24 +146,24 @@
             <th colspan="3">Latest Articles</th>
           </tr>
           <tr class="table-header-row">
-            <th>Title</th>
-            <th>Author</th>
-            <th>Date</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Date</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Fort Wayne Summer Fest</td>
+            <td>Music Night</td>
             <td>Guest Writer</td>
             <td>July 20, 2025</td>
           </tr>
           <tr>
-            <td>Top Places to Visit in Indiana</td>
+            <td>Culture Fest</td>
             <td>Guest Writer</td>
             <td>July 18, 2025</td>
           </tr>
           <tr>
-            <td>Music Events This Month</td>
+            <td>Summer Promo</td>
             <td>Guest Writer</td>
             <td>July 15, 2025</td>
           </tr>
@@ -169,24 +175,34 @@
     <footer class="site-footer">
       <div class="footer-top">
         <div class="footer-left">
-          <a href="index.html"><img src="images/logo.png" alt="FW Events logo" /></a>
+          <a href="index.html"
+            ><img src="images/logo.png" alt="FW Events logo"
+          /></a>
         </div>
         <div class="footer-center">
           <!-- Use # or real links -->
           <a
             href="https://artsunited.org/get-involved/view-events/?gad_source=1&gad_campaignid=12736434403&gclid=Cj0KCQjwhO3DBhDkARIsANxrhTqN_LlEwLJCE9CXzeahTtjWJsOSCBAQzAMZSA_kzHEGc_CCCn43KDAaAgB1EALw_wcB"
             target="_blank"
+            rel="noopener noreferrer"
             >Friend 1</a
           >
-          <a href="https://www.visitfortwayne.com/events/" target="_blank"
+          <a
+            href="https://www.visitfortwayne.com/events/"
+            target="_blank"
+            rel="noopener noreferrer"
             >Friend 2</a
           >
           <a
             href="https://www.eventbrite.com/d/in--fort-wayne/events/"
             target="_blank"
+            rel="noopener noreferrer"
             >Friend 3</a
           >
-          <a href="https://www.wane.com/community/calendar/#!/" target="_blank"
+          <a
+            href="https://www.wane.com/community/calendar/#!/"
+            target="_blank"
+            rel="noopener noreferrer"
             >Friend 4</a
           >
         </div>
