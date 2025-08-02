@@ -1,412 +1,174 @@
-/* Reset some default styles */
+/* Basic Reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
 }
 
-/* Body and overall background */
+/* Body Style */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f5f7fa;
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
   color: #333;
-}
-
-/* FAQ container */
-.faq-container {
-  max-width: 800px;
-  margin: 50px auto;
-  background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Headings */
-h1 {
-  text-align: center;
-  color: #004080;
-  margin-bottom: 30px;
-  font-weight: 700;
-}
-
-.faq-item {
-  margin-bottom: 30px;
-}
-
-.faq-item h2 {
-  color: #004080;
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-.faq-item p {
-  font-size: 16px;
   line-height: 1.6;
 }
 
-/* Links */
-a {
-  color: #0066cc;
-  text-decoration: none;
-  transition: color 0.3s ease;
+/* Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #004080;
+  color: white;
+  flex-wrap: wrap;
 }
 
-a:hover,
-a:focus {
-  text-decoration: underline;
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  background-color: #0066cc;
+  color: white;
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  flex-direction: column;
+}
+
+.dropdown-content a {
   color: #004080;
-  outline: none;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
 }
 
-/* Back Home Button Container */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.show {
+  display: block;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  padding: 8px;
+  border-radius: 4px 0 0 4px;
+  border: none;
+  outline: none;
+  width: 180px;
+}
+
+.search-box button {
+  padding: 8px 10px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+/* Gallery Frame */
+.gallery-frame {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border: 3px solid #004080;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 64, 128, 0.2);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.gallery-frame:hover {
+  box-shadow: 0 12px 30px rgba(0, 64, 128, 0.4);
+  border-color: #0066cc;
+}
+
+/* Gallery Grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Each Item */
+.gallery-item {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 15px rgba(0, 64, 128, 0.25);
+}
+
+/* Images and Videos */
+.gallery-item img,
+.gallery-item video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Captions */
+.gallery-item p {
+  margin: 0;
+  font-weight: 600;
+  color: #004080;
+  font-size: 1rem;
+  user-select: none;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .gallery-frame {
+    margin: 20px 15px;
+    padding: 20px;
+  }
+}
+/* Stylish Back Home Button */
 .back-home {
   text-align: center;
   margin-top: 40px;
 }
 
-/* Back Home Button */
-.back-home button,
-a button {
-  background-color: #004080;
+.back-home button {
+  background-color: #004b8d;
   color: white;
-  padding: 10px 24px;
-  border: none;
-  border-radius: 8px;
+  padding: 12px 24px;
   font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 3px 6px rgba(0, 64, 128, 0.4);
-}
-
-.back-home button:hover,
-.back-home button:focus,
-a button:hover,
-a button:focus {
-  background-color: #0066cc;
-  outline: none;
-  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.6);
-}
-
-/* Header styling */
-.site-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: rgba(0, 64, 128, 0.85); /* semi-transparent navy */
-  padding: 8px 20px;
-  color: white;
-  position: sticky;
-  top: 12px; /* slightly down */
-  z-index: 1000;
-  border-radius: 12px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-  margin-left: 10px;
-  margin-right: 10px;
-  font-size: 0.95rem;
-}
-
-/* Dropdown container */
-.dropdown {
-  position: relative;
-}
-
-/* Dropdown button */
-.dropbtn {
-  background-color: transparent;
-  border: none;
-  padding: 8px 14px;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-  outline: none;
-  box-shadow: none;
-}
-
-/* Hover & focus effect for dropdown button */
-.dropbtn:hover,
-.dropbtn:focus {
-  background-color: rgba(255, 255, 255, 0.15);
-  outline: none;
-  box-shadow: none;
-}
-
-/* Dropdown content hidden by default */
-.dropdown-content {
-  display: block; /* controlled by opacity and pointer-events */
-  position: absolute;
-  background-color: white;
-  min-width: 160px;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  top: 130%;
-  left: 0;
-  opacity: 0;
-  transform: translateY(-15px);
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 1001;
-}
-
-/* Links inside dropdown */
-.dropdown-content a {
-  color: #004080;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  font-weight: 600;
-  border-bottom: 1px solid #eee;
-  transition: background-color 0.2s ease;
-}
-
-/* Hover/focus on dropdown links */
-.dropdown-content a:hover,
-.dropdown-content a:focus {
-  background-color: #f0f8ff;
-  outline: none;
-}
-
-/* Show dropdown with fade and slide */
-.show {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-  pointer-events: auto !important;
-}
-
-/* Logo styling */
-.logo {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.logo img {
-  height: 44px;
-  width: auto;
-  object-fit: contain;
-}
-
-/* Search form */
-.search-box {
-  display: flex;
-  align-items: center;
-  background-color: transparent;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: none;
-}
-
-/* Search input */
-.search-box input[type="text"] {
-  padding: 8px 12px;
-  border: none;
-  border-radius: 6px 0 0 6px;
-  font-size: 1rem;
-  width: 180px;
-  transition: width 0.3s ease;
-  background-color: rgba(255, 255, 255, 0.15);
-  color: white;
-  outline: none;
-  box-shadow: none;
-}
-
-/* Placeholder color */
-.search-box input::placeholder {
-  color: #eee;
-}
-
-/* On focus input */
-.search-box input[type="text"]:focus {
-  width: 220px;
-  background-color: rgba(255, 255, 255, 0.3);
-  outline: none;
-  box-shadow: none;
-}
-
-/* Search button */
-.search-box button {
-  background-color: transparent;
-  border: none;
-  padding: 8px 14px;
-  color: white;
-  font-size: 1.3rem;
-  border-radius: 0 6px 6px 0;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  outline: none;
-  box-shadow: none;
-}
-
-/* Search button hover/focus */
-.search-box button:hover,
-.search-box button:focus {
-  background-color: rgba(255, 255, 255, 0.2);
-  outline: none;
-  box-shadow: none;
-}
-
-/* Footer */
-.site-footer {
-  background-color: rgba(0, 64, 128, 0.85);
-  color: #f0e68c;
-  text-align: center;
-  padding: 15px 10px;
-  font-size: 15px;
-  margin-top: auto;
-  border-radius: 0 0 12px 12px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.site-footer a {
-  color: #fffacd;
-  text-decoration: none;
-  margin: 0 8px;
-  font-weight: 600;
-}
-
-.site-footer a:hover {
-  color: #ffffe0;
-  text-decoration: underline;
-}
-
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.footer-left img {
-  height: 40px;
-  object-fit: contain;
-}
-
-.footer-center a {
-  color: #a0c4ff;
-  margin: 0 10px;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.footer-center a:hover,
-.footer-center a:focus {
-  color: white;
-  outline: none;
-}
-
-.footer-right a img {
-  height: 28px;
-  margin: 0 8px;
-  filter: brightness(0) invert(1);
-  transition: filter 0.3s ease;
-}
-
-.footer-right a:hover img,
-.footer-right a:focus img {
-  filter: brightness(0.8) invert(0.8);
-  outline: none;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  padding-top: 8px;
-  font-size: 0.8rem;
-  color: #f5f5f5;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .site-header,
-  .footer-top {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .search-box {
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .dropdown,
-  .search-box {
-    flex: 1 1 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .logo {
-    flex-basis: 100%;
-    justify-content: center;
-    margin: 10px 0;
-  }
-
-  .search-box input[type="text"] {
-    width: 70vw;
-  }
-
-  .footer-top {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-center a {
-    margin: 5px;
-  }
-
-  .footer-right a img {
-    margin: 0 5px;
-  }
-}
-
-/* Back home button special styling */
-a button {
-  background-color: #555;
-  color: white;
-  padding: 10px 20px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
-a button:hover,
-a button:focus {
-  background-color: #333;
-  outline: none;
-}
-/*     */
-a button {
-  background-color: rgba(0, 64, 128, 0.85);
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-}
-
-a button:hover,
-a button:focus {
-  background-color: rgba(0, 64, 128, 0.85);
-  outline: none;
+.back-home button:hover {
+  background-color: #003366;
 }
