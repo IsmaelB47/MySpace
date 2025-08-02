@@ -1,89 +1,160 @@
-/* Basic Reset */
+/* Reset some default styles */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-/* Body Style */
-body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f7fa;
   color: #333;
-  line-height: 1.6;
 }
 
-/* Header */
+/* Body and overall background */
+body {
+  background-color: #f5f7fa;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styling */
 .site-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #004080;
+  justify-content: space-between;
+  background-color: rgba(0, 64, 128, 0.85);
+  padding: 8px 20px;
   color: white;
-  flex-wrap: wrap;
+  position: sticky;
+  top: 12px;
+  z-index: 800;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 0.95rem;
+  height: 60px; /* Normal height */
 }
 
+/* Dropdown container */
 .dropdown {
   position: relative;
 }
 
+/* Dropdown button */
 .dropbtn {
-  background-color: #0066cc;
-  color: white;
-  padding: 10px 16px;
-  font-size: 16px;
+  background-color: transparent;
   border: none;
+  padding: 8px 14px;
+  color: white;
+  font-size: 1rem;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  outline: none;
+  box-shadow: none;
 }
 
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  outline: none;
+  box-shadow: none;
+}
+
+/* Dropdown content */
 .dropdown-content {
-  display: none;
   position: absolute;
-  background-color: #ffffff;
+  background-color: white;
   min-width: 160px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  top: 130%;
+  left: 0;
+  opacity: 0;
+  transform: translateY(-15px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1001;
 }
 
 .dropdown-content a {
   color: #004080;
-  padding: 10px 14px;
+  padding: 12px 16px;
   text-decoration: none;
   display: block;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease;
 }
 
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
+.dropdown-content a:hover,
+.dropdown-content a:focus {
+  background-color: #f0f8ff;
+  outline: none;
 }
 
-.show {
-  display: block;
+.dropdown-content.show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
 }
-
+/* Search form */
 .search-box {
   display: flex;
   align-items: center;
+  background-color: transparent;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: none;
 }
 
-.search-box input {
-  padding: 8px;
-  border-radius: 4px 0 0 4px;
+.search-box input[type="text"] {
+  padding: 8px 12px;
   border: none;
-  outline: none;
+  border-radius: 6px 0 0 6px;
+  font-size: 1rem;
   width: 180px;
+  transition: width 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  outline: none;
+  box-shadow: none;
+}
+
+.search-box input::placeholder {
+  color: #eee;
+}
+
+.search-box input[type="text"]:focus {
+  width: 220px;
+  background-color: rgba(255, 255, 255, 0.3);
+  outline: none;
+  box-shadow: none;
 }
 
 .search-box button {
-  padding: 8px 10px;
-  background-color: #0066cc;
-  color: white;
+  background-color: transparent;
   border: none;
-  border-radius: 0 4px 4px 0;
+  padding: 8px 14px;
+  color: white;
+  font-size: 1.3rem;
+  border-radius: 0 6px 6px 0;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  outline: none;
+  box-shadow: none;
 }
+
+.search-box button:hover,
+.search-box button:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  outline: none;
+  box-shadow: none;
+}
+
 
 /* Gallery Frame */
 .gallery-frame {
@@ -172,3 +243,4 @@ body {
 .back-home button:hover {
   background-color: #003366;
 }
+
