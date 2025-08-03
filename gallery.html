@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FW Event | Gallery</title>
+    <link rel="stylesheet" href="gallery.css" />
+  </head>
+
+  <body>
+    <!-- HEADER: Include this on ALL pages -->
+    <header class="site-header">
+      <!-- Dropdown Menu -->
+      <div class="dropdown">
+        <button
+          class="dropbtn"
+          id="menuBtn"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Menu
+        </button>
+        <nav
+          class="dropdown-content"
+          id="menuDropdown"
+          aria-label="Main navigation"
+          aria-hidden="true"
+        >
+          <a href="events.html">Events</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+      </div>
+      <!-- Logo -->
+
+      <div class="logo" role="img" aria-label="FW Events logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="FW SC Events Logo" />
+        </a>
+      </div>
+
+      <!-- Search -->
+      <form
+        class="search-box"
+        onsubmit="search(); return false;"
+        role="search"
+        aria-label="Site search"
+      >
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search for events..."
+          aria-label="Search input"
+        />
+        <button type="submit" aria-label="Submit search">🔍</button>
+      </form>
+    </header>
+
+    <script src="scripts.js" defer></script>
+
+    <!-- Gallery Frame -->
+    <div class="gallery-frame">
+      <main class="gallery">
+        <!-- Image items -->
+        <div class="gallery-item">
+          <img src="images/event1.jpg" alt="Community dance performance" />
+          <p>Community Dance Night</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/event2.jpg" alt="Live concert in Fort Wayne" />
+          <p>Live Concert</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/event3.jpg" alt="Summer market event" />
+          <p>Summer Market</p>
+        </div>
+
+        <!-- Video items -->
+        <div class="gallery-item">
+          <video controls>
+            <source src="videos/event1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p>Promo Clip: Music Night</p>
+        </div>
+
+        <div class="gallery-item">
+          <video controls>
+            <source src="videos/event2.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <p>Highlights: Culture Fest</p>
+        </div>
+      </main>
+    </div>
+
+    <!-- Back to Home -->
+    <div class="back-home">
+      <a href="index.html">
+        <button type="button">Back Home</button>
+      </a>
+    </div>
+  </body>
+</html>
