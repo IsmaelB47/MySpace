@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+  <body>
+    <!-- HEADER: Include this on ALL pages -->
+    <header class="site-header">
+      <!-- Dropdown Menu -->
+      <div class="dropdown">
+        <button
+          class="dropbtn"
+          id="menuBtn"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Menu
+        </button>
+        <nav
+          class="dropdown-content"
+          id="menuDropdown"
+          aria-label="Main navigation"
+        >
+          <a href="events.html">Events</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+      </div>
+
+      <!-- Logo -->
+
+      <div class="logo" role="img" aria-label="FW Events logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="FW SC Events Logo" />
+        </a>
+      </div>
+
+      <!-- Search -->
+      <form
+        class="search-box"
+        onsubmit="search(); return false;"
+        role="search"
+        aria-label="Site search"
+      >
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search for events..."
+          aria-label="Search input"
+        />
+        <button type="submit" aria-label="Submit search">🔍</button>
+      </form>
+    </header>
+    <!-- table form contact us -->
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <form action="#" method="post">
+        <table>
+          <tr>
+            <td><label for="name">Name:</label></td>
+            <td><input type="text" id="name" name="name" required /></td>
+          </tr>
+          <tr>
+            <td><label for="email">Email:</label></td>
+            <td><input type="email" id="email" name="email" required /></td>
+          </tr>
+          <tr>
+            <td><label for="subject">Subject:</label></td>
+            <td><input type="text" id="subject" name="subject" /></td>
+          </tr>
+          <tr>
+            <td><label for="message">Message:</label></td>
+            <td>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: center">
+              <button type="submit">Send Message</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <!--    -------------------------------------- -->
+    <!-- JS -->
+    <script src="scripts.js" defer></script>
+    <!-- back home button -->
+    <div style="text-align: center; margin-top: 20px">
+      <a href="index.html">
+        <button type="button">Back Home</button>
+      </a>
+    </div>
+  </body>
+</html>
